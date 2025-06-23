@@ -1,0 +1,925 @@
+!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&display=swap" rel="stylesheet">
+  <title>Dev Váz Longe - A 1ª Agência de Marketing com Performance no Sumbe</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+
+<body>
+
+  <script>
+    function atualizarStatusLoja() {
+      const agora = new Date();
+      const diaSemana = agora.getDay();
+      const hora = agora.getHours();
+
+      const statusContainer = document.getElementById("status-loja");
+      const statusTexto = document.getElementById("status-texto");
+
+      let aberto = false;
+
+      if (diaSemana >= 1 && diaSemana <= 6 && hora >= 8 && hora < 23) {
+        aberto = true;
+      }
+
+      if (aberto) {
+        statusContainer.classList.add("aberto");
+        statusContainer.classList.remove("fechado");
+        statusTexto.textContent = "🟢 ABERTO AGORA";
+      } else {
+        statusContainer.classList.add("fechado");
+        statusContainer.classList.remove("aberto");
+        statusTexto.textContent = "🔴 FECHADO AGORA";
+      }
+    }
+
+    document.addEventListener("DOMContentLoaded", function () {
+      atualizarStatusLoja();
+      setInterval(atualizarStatusLoja, 60000);
+    });
+  </script>
+
+  <header class="header">
+    <div id="status-loja" class="status-loja">
+      <span id="status-texto">Carregando...</span>
+    </div>
+
+    <section class="header-container">
+      <!-- LOGO -->
+      <a href="#" class="logo">
+        <img width="400" height="200" src="/img/logo.png" alt="logo" class="logo-animada">
+      </a>
+
+      <!-- MENU HAMBÚRGUER -->
+      <div class="menu-toggle" id="menu-toggle">☰</div>
+
+      <!-- NAVEGAÇÃO -->
+      <nav class="navbar" id="navbar">
+        <a href="#home">Home</a>
+        <a href="#about">Sobre</a>
+        <a href="#serviços">Serviços</a>
+        <a href="#faq">FAQ</a>
+        <a href="#depoimentos">Depoimentos</a>
+        <a href="#contact">Contato</a>
+      </nav>
+
+      <!-- ÍCONES -->
+      <div class="icons">
+        <img width="30" height="30" src="https://img.icons8.com/?size=100&id=132&format=png&color=FBFBFB" alt="search">
+        <img width="30" height="30" src="https://img.icons8.com/?size=100&id=59997&format=png&color=FFFFFF" alt="cart">
+      </div>
+    </section>
+  </header>
+
+  <!-- JS do menu responsivo -->
+  <script>
+    const menuToggle = document.getElementById('menu-toggle');
+    const navbar = document.getElementById('navbar');
+
+    menuToggle.addEventListener('click', () => {
+      navbar.classList.toggle('active');
+    });
+  </script>
+
+
+  <div class="home-brilho">
+    <section id="home" class="home-container">
+
+      <!-- IMAGEM À ESQUERDA -->
+      <div class="highlighted-image">
+        <img src="./img/capa .png" alt="Apresentadora VázLonge">
+      </div>
+
+      <!-- TEXTO À DIREITA -->
+      <div class="hero-content">
+        <h1>Váz Longe - A 1ª Agência de Marketing com Performance no Sumbe. Soluções Criativas em Marketing & Gestão de
+          Redes Sociais</h2>
+          <p id="typewriter"></p>
+          <a href="https://wa.me/244941000402" class="btn-cta">Quero Escalar Meu Negócio</a>
+      </div>
+
+    </section>
+  </div>
+
+  <!-- SCRIPT PARA TEXTO DIGITANDO -->
+  <script>
+    const texto = "+150 empresas em toda Angola. Ajudamos negócios como o seu a ganhar visibilidade e aumentar as vendas com estratégias de alto impacto.";
+    const paragrafo = document.getElementById("typewriter");
+    let index = 0;
+
+    function escrever() {
+      if (index < texto.length) {
+        paragrafo.innerHTML += texto.charAt(index);
+        index++;
+        setTimeout(escrever, 15);
+      } else {
+        setTimeout(() => {
+          paragrafo.innerHTML = "";
+          index = 0;
+          escrever();
+        }, 3000);
+      }
+    }
+
+    window.addEventListener("load", () => {
+      setTimeout(escrever, 2000);
+    });
+  </script>
+
+</body>
+
+</html>
+
+
+
+<section id="formulario" class="formulario-section">
+  <div class="formulario-container animated-form">
+    <h2 class="formulario-titulo">🚀 ESCALAMOS NEGÓCIOS COMO O SEU</h2>
+    <p class="formulario-subtitulo">Preencha o formulário clica em enviar e daremos um salto juntos!</p>
+    <iframe
+      src="https://docs.google.com/forms/d/e/1FAIpQLScdcQyEj6ak5X4-OZZNwLHqCUkuzLtapZPqa7xIHm1Iqk8MVw/viewform?embedded=true"
+      width="100%" height="600" frameborder="0" marginheight="0" marginwidth="0" loading="lazy">
+      A carregar…
+    </iframe>
+  </div>
+</section>
+
+<!-- CLIENTES ATENDIDOS / SERVIÇOS JÁ REALIZADOS -->
+<section id="clientes" class="clientes-atendidos">
+  <h2 class="nosos">ALGUNS DOS <span>NOSOS CLIENTES</span></h2>
+
+  <div class="Clientes"> <!-- Corrigido aqui -->
+
+    <div class="cliente-card">
+      <video src="./videos/SILUZ ANGOLA HUAMBO 2.mp4" controls autoplay muted loop></video>
+      <h3>Siluz Angola</h3>
+      <p>Campanha de vídeos e identidade visual fortalecida nas redes sociais.</p>
+    </div>
+
+    <div class="cliente-card">
+      <video src="./videos/sessão.mp4" controls autoplay muted loop></video>
+      <h3>Bastidores</h3>
+      <p>Campanha de vídeos publicitário e seção de fotos para redes sociais dos nossos clientes.</p>
+    </div>
+
+    <div class="cliente-card">
+      <video src="./videos/01.mp4" controls autoplay muted loop></video>
+      <h3>Montiza</h3>
+      <p>Bônus da semana</p>
+    </div>
+
+    <div class="cliente-card">
+      <video src="./videos/CLÍNICA GERAL..mp4" controls autoplay muted loop></video>
+      <h3>Clínica Santa Teresinha</h3>
+      <p>Website completo com agendamento online e Google Meu Negócio otimizado.</p>
+    </div>
+
+    <div class="cliente-card">
+      <video src="./videos/bom.mp4" controls autoplay muted loop></video>
+      <h3>Jans Electic</h3>
+      <p>Campanha de vídeos e identidade visual Para o engajamento</p>
+    </div>
+
+    <div class="cliente-card">
+      <video src="./videos/doutora.mp4" controls autoplay muted loop></video>
+      <h3>Clínica Santa Teresinha Sumbe</h3>
+      <p>Vídeos para o engajamento da página do Facebook.</p>
+    </div>
+  </div>
+
+</section>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    });
+
+    document.querySelectorAll('.scroll-fade').forEach(el => {
+      observer.observe(el);
+    });
+  });
+</script>
+
+<section class="servicos" id="serviços">
+
+  <h2 class="titulo">NOSSOS <span class="destaque-span">SERVIÇOS</span></h2>
+
+  <div class="servicos-grid">
+
+    <div class="grupo-servico scroll-fade">
+      <h3><i class="fas fa-bullhorn"></i> 4.2 Gestão de Marketing</h3>
+      <ul>
+        <li><i class="fas fa-check-circle"></i> Redes sociais e sites com SEO <button
+            onclick="adicionarAoCarrinho('Redes sociais e sites com SEO')">Adicionar</button></li>
+        <li><i class="fas fa-check-circle"></i> Anúncios nas plataformas digitais <button
+            onclick="adicionarAoCarrinho('Anúncios nas plataformas digitais')">Adicionar</button></li>
+        <li><i class="fas fa-check-circle"></i> Criação de +30 artes por mês <button
+            onclick="adicionarAoCarrinho('Criação de +30 artes por mês')">Adicionar</button></li>
+        <li><i class="fas fa-check-circle"></i> Filmagens com drone e câmara com qualidade <button
+            onclick="adicionarAoCarrinho('Filmagens com drone e câmara com qualidade')">Adicionar</button></li>
+        <li><i class="fas fa-check-circle"></i> Técnicas para aumento de visibilidade <button
+            onclick="adicionarAoCarrinho('Técnicas para aumento de visibilidade')">Adicionar</button></li>
+        <li><i class="fas fa-check-circle"></i> Estratégias para aumento de vendas <button
+            onclick="adicionarAoCarrinho('Estratégias para aumento de vendas')">Adicionar</button></li>
+        <li><i class="fas fa-check-circle"></i> Gestão de Processos de Vendas <button
+            onclick="adicionarAoCarrinho('Gestão de Processos de Vendas')">Adicionar</button></li>
+      </ul>
+    </div>
+
+    <div class="grupo-servico scroll-fade">
+      <h3><i class="fas fa-wallet"></i> 4.3 Contas Internacionais</h3>
+      <ul>
+        <li><i class="fas fa-check-circle"></i> Cartões Visa internacionais <button
+            onclick="adicionarAoCarrinho('Cartões Visa internacionais')">Adicionar</button></li>
+        <li><i class="fas fa-check-circle"></i> PayPal, Bibyt e mais <button
+            onclick="adicionarAoCarrinho('PayPal, Bibyt e mais')">Adicionar</button></li>
+        <li><i class="fas fa-check-circle"></i> Criação de documentos estrangeiros <button
+            onclick="adicionarAoCarrinho('Criação de documentos estrangeiros')">Adicionar</button></li>
+      </ul>
+    </div>
+
+    <div class="grupo-servico scroll-fade">
+      <h3><i class="fas fa-shipping-fast"></i> 4.4 Importação Estratégica</h3>
+      <ul>
+        <li><i class="fas fa-check-circle"></i> Formação e suporte com plataformas <button
+            onclick="adicionarAoCarrinho('Formação e suporte com plataformas')">Adicionar</button></li>
+        <li><i class="fas fa-check-circle"></i> Fornecedores confiáveis <button
+            onclick="adicionarAoCarrinho('Fornecedores confiáveis')">Adicionar</button></li>
+        <li><i class="fas fa-check-circle"></i> Moedas estrangeiras: EURO, USD e LIBRA <button
+            onclick="adicionarAoCarrinho('Moedas estrangeiras: EURO, USD e LIBRA')">Adicionar</button></li>
+      </ul>
+    </div>
+
+    <div class="grupo-servico scroll-fade">
+      <h3><i class="fas fa-lightbulb"></i> 4.5 Estratégia e Consultoria</h3>
+      <ul>
+        <li><i class="fas fa-check-circle"></i> Diagnóstico de concorrência <button
+            onclick="adicionarAoCarrinho('Diagnóstico de concorrência')">Adicionar</button></li>
+      </ul>
+    </div>
+
+    <div class="grupo-servico scroll-fade">
+      <h3><i class="fas fa-camera-retro"></i> 4.6 Mídias Sociais</h3>
+      <ul>
+        <li><i class="fas fa-check-circle"></i> Gestão e conteúdo estratégico <button
+            onclick="adicionarAoCarrinho('Gestão e conteúdo estratégico')">Adicionar</button></li>
+      </ul>
+    </div>
+
+    <div class="grupo-servico scroll-fade">
+      <h3><i class="fas fa-chart-line"></i> 4.7 Tráfego Pago</h3>
+      <ul>
+        <li><i class="fas fa-check-circle"></i> Facebook, Google, TikTok Ads <button
+            onclick="adicionarAoCarrinho('Facebook, Google, TikTok Ads')">Adicionar</button></li>
+      </ul>
+    </div>
+
+    <div class="grupo-servico scroll-fade">
+      <h3><i class="fas fa-pen-nib"></i> 4.8 Identidade Visual</h3>
+      <ul>
+        <li><i class="fas fa-check-circle"></i> Logos, branding e kits digitais <button
+            onclick="adicionarAoCarrinho('Logos, branding e kits digitais')">Adicionar</button></li>
+      </ul>
+    </div>
+
+
+    <div class="grupo-servico scroll-fade">
+      <h3><i class="fas fa-paint-brush"></i> 4.1 Serviços Gráficos</h3>
+      <ul>
+        <li><i class="fas fa-check-circle"></i> Banners, faixas e lonas <button
+            onclick="adicionarAoCarrinho('Banners, faixas e lonas')">Adicionar</button></li>
+        <li><i class="fas fa-check-circle"></i> Cartões de visita <button
+            onclick="adicionarAoCarrinho('Cartões de visita')">Adicionar</button></li>
+        <li><i class="fas fa-check-circle"></i> Adesivos, folders, receituários <button
+            onclick="adicionarAoCarrinho('Adesivos, folders, receituários')">Adicionar</button></li>
+        <li><i class="fas fa-check-circle"></i> Credenciais, ingressos e pulseiras <button
+            onclick="adicionarAoCarrinho('Credenciais, ingressos e pulseiras')">Adicionar</button></li>
+        <li><i class="fas fa-check-circle"></i> Placas em PVC ou PS <button
+            onclick="adicionarAoCarrinho('Placas em PVC ou PS')">Adicionar</button></li>
+        <li><i class="fas fa-check-circle"></i> Cardápios e tags <button
+            onclick="adicionarAoCarrinho('Cardápios e tags')">Adicionar</button></li>
+        <li><i class="fas fa-check-circle"></i> Calendários e folhinhas <button
+            onclick="adicionarAoCarrinho('Calendários e folhinhas')">Adicionar</button></li>
+        <li><i class="fas fa-check-circle"></i> Recibos e carnês <button
+            onclick="adicionarAoCarrinho('Recibos e carnês')">Adicionar</button></li>
+      </ul>
+    </div>
+
+    <div class="grupo-servico scroll-fade">
+      <h3 style="color: chartreuse;" <i class="fas fa-gift"></i> 4.9 Bônus e Bônus Surpresas</h3>
+      <ul>
+        <li><i class="fas fa-check-circle"></i> Gravação de bastidores <button
+            onclick="adicionarAoCarrinho('Gravação de bastidores')">Adicionar</button></li>
+        <li><i class="fas fa-check-circle"></i> Conta VISA <button
+            onclick="adicionarAoCarrinho('Conta VISA')">Adicionar</button></li>
+        <li><i class="fas fa-check-circle"></i> Consultoria Comercial <button
+            onclick="adicionarAoCarrinho('Consultoria Comercial')">Adicionar</button></li>
+      </ul>
+    </div>
+
+    <div id="carrinho" style="display:none; animation: fadeUp 1s ease;">
+      <h4 style="color: rgb(11, 32, 59); font-size: 3rem;">🛒 Serviços Selecionados:</h4>
+      <ul id="lista-carrinho" style="color: rgb(6, 31, 63); font-size: 2rem;"></ul>
+      <a id="botao-whatsapp" class="btn-orcamento" href="#" target="_blank">
+        Finalizar Pedido no WhatsApp
+      </a>
+    </div>
+
+    <div class="botao-centro">
+      <button onclick="enviarParaWhatsApp()" class="btn-orcamento">Enviar para WhatsApp</button>
+    </div>
+  </div>
+</section>
+
+<script>
+  const carrinho = [];
+
+  function adicionarAoCarrinho(servico) {
+    carrinho.push(servico);
+
+    // Atualiza a lista visual do carrinho
+    const lista = document.getElementById("lista-carrinho");
+    lista.innerHTML = ""; // limpa a lista antes de atualizar
+
+    carrinho.forEach((item, index) => {
+      const li = document.createElement("li");
+      li.textContent = `${index + 1}. ${item}`;
+      lista.appendChild(li);
+    });
+
+    // Exibe a div do carrinho com animação
+    const divCarrinho = document.getElementById("carrinho");
+    divCarrinho.style.display = "block";
+    divCarrinho.style.animation = "fadeUp 0.5s ease forwards";
+
+    // Atualiza o link do botão do WhatsApp
+    const numero = "244941000402";
+    const mensagem = `👋 Olá! Gostaria de contratar os seguintes serviços:\n\n${carrinho.map((s, i) => `${i + 1}. ${s}`).join("\n")}\n\n✅ Aguardo mais informações.`;
+    document.getElementById("botao-whatsapp").href = `https://wa.me/${numero}?text=${encodeURIComponent(mensagem)}`;
+
+    alert(`✔️ ${servico} foi adicionado ao carrinho!`);
+  }
+
+  function enviarParaWhatsApp() {
+    if (carrinho.length === 0) {
+      alert("🛒 O carrinho está vazio. Adicione ao menos um serviço!");
+      return;
+    }
+
+    const numero = "244941000402";
+    const mensagem = `👋 Olá! Gostaria de contratar os seguintes serviços:\n\n${carrinho.map((s, i) => `${i + 1}. ${s}`).join("\n")}\n\n✅ Aguardo mais informações.`;
+
+    const url = `https://wa.me/${numero}?text=${encodeURIComponent(mensagem)}`;
+    window.open(url, "_blank");
+  }
+
+</script>
+
+<section class="servico-dia" id="menu">
+  <div class="container">
+    <h2 class="titulo-contador">PROMO <span class="destaque-span">DA SEMANA</span></h2>
+    <p class="descricao-desconto">Assine agora e obtenha <strong>20% de desconto</strong>.</p>
+
+    <div class="box-servico-dia">
+      <div class="contador">
+        ⏳ Tempo restante: <span id="contador-relampago">02:00:00</span>
+      </div>
+    </div>
+
+    <div class="oferta-relampago">
+      <p class="animado">Assine agora e obtenha 20% de desconto</p>
+      <h3 id="servico-do-dia" class="animado-servico"></h3>
+      <a href="https://wa.me/244941000402" target="_blank" class="cta-botao">
+        Aproveitar oferta relâmpago
+      </a>
+    </div>
+  </div>
+</section>
+
+<script>
+  const listaLi = document.querySelectorAll("#serviços li");
+  const servicos = Array.from(listaLi).map(item => item.textContent.trim());
+
+  const servicoDoDia = document.getElementById("servico-do-dia");
+  const contador = document.getElementById("contador-relampago");
+  let indexAtual = 0;
+
+  function atualizarServico() {
+    servicoDoDia.textContent = servicos[indexAtual];
+    indexAtual = (indexAtual + 1) % servicos.length;
+    iniciarContador();
+  }
+
+  let tempoRestante = 7200;
+  let intervalo;
+
+  function iniciarContador() {
+    clearInterval(intervalo);
+    tempoRestante = 7200;
+
+    intervalo = setInterval(() => {
+      const horas = String(Math.floor(tempoRestante / 3600)).padStart(2, '0');
+      const minutos = String(Math.floor((tempoRestante % 3600) / 60)).padStart(2, '0');
+      const segundos = String(tempoRestante % 60).padStart(2, '0');
+
+      contador.textContent = `${horas}:${minutos}:${segundos}`;
+
+      tempoRestante--;
+
+      if (tempoRestante < 0) {
+        atualizarServico();
+      }
+    }, 1000);
+  }
+
+  document.addEventListener("DOMContentLoaded", () => {
+    atualizarServico();
+  });
+</script>
+
+<section class="depoimentos" id="depoimentos">
+  <h2 class="titulo-depoimento">O QUE DIZEM <span class="destaque-span">NOSSOS CLIENTES</span></h2>
+
+  <div class="depoimentos-container">
+    <div class="depoimento">
+      <img src="img/th.webp" alt="Cliente 1">
+      <p>"A agência mudou completamente a presença online do meu negócio. Muito obrigado!"</p>
+      <h4>Pedro João</h4>
+      <span>Empresário</span>
+    </div>
+
+    <div class="depoimento">
+      <img src="img/pexels-tubarones-3754438.jpg" alt="Cliente 2">
+      <p>"Trabalho profissional, rápido e com resultados visíveis nas redes sociais."</p>
+      <h4>Maria Luísa</h4>
+      <span>Influencer Digital</span>
+    </div>
+
+    <div class="depoimento">
+      <img src="img/OIP (2).webp" alt="Cliente 3">
+      <p>"Sentimos confiança desde o primeiro contato. Recomendamos fortemente. Grande abraço!"</p>
+      <h4>Joel Kavita</h4>
+      <span>Grupo JPSE</span>
+    </div>
+
+    <div class="depoimento">
+      <img src="img/OIP (1).webp" alt="Cliente 6">
+      <p>"A equipa é muito criativa e atenciosa. Continuarei a trabalhar com eles."</p>
+      <h4>Judite Manuel</h4>
+      <span>Arquiteta</span>
+    </div>
+  </div>
+
+  <section class="testemunhos-section">
+    <h2 class="titulo-testemunhos">📲 Comprovativos e Testemunhos</h2>
+
+    <div class="carousel-wrapper">
+      <button class="carousel-btn" id="btn-prev">⏪</button>
+
+      <div class="carousel-container" id="carousel">
+        <div class="carousel-slide active">
+          <img src="img/WhatsApp%20Image%202025-06-20%20at%2023.57.59%20(1).jpeg" alt="Comprovativo 1">
+        </div>
+        <div class="carousel-slide">
+          <img src="img/WhatsApp%20Image%202025-06-20%20at%2023.57.59.jpeg" alt="Comprovativo 2">
+        </div>
+        <div class="carousel-slide">
+          <img src="img/WhatsApp%20Image%202025-06-20%20at%2023.58.02.jpeg" alt="Comprovativo 3">
+        </div>
+        <div class="carousel-slide">
+          <img src="img/WhatsApp%20Image%202025-06-20%20at%2023.58.03.jpeg" alt="Comprovativo 4">
+        </div>
+      </div>
+
+      <button class="carousel-btn" id="btn-next">⏩</button>
+    </div>
+
+    <style>
+      .carousel-wrapper {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        margin: 40px auto;
+        flex-wrap: nowrap;
+      }
+
+      .carousel-container {
+        position: relative;
+        width: 100%;
+        max-width: 300px;
+        overflow: hidden;
+        height: auto;
+      }
+
+      .carousel-slide {
+        opacity: 0;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        transform: scale(0.95);
+        transition: opacity 0.8s ease, transform 0.8s ease;
+        z-index: 0;
+      }
+
+      .carousel-slide.active {
+        opacity: 1;
+        position: relative;
+        transform: scale(1);
+        z-index: 1;
+      }
+
+      .carousel-slide img {
+        width: 100%;
+        height: auto;
+        border-radius: 8px;
+        display: block;
+      }
+
+      .carousel-btn {
+        font-size: 2rem;
+        cursor: pointer;
+        background: transparent;
+        border: none;
+        color: #444;
+        padding: 0 10px;
+        transition: color 0.3s ease, transform 0.2s ease;
+      }
+
+      .carousel-btn:hover {
+        color: #000;
+        transform: scale(1.2);
+      }
+
+      @media (max-width: 768px) {
+        .carousel-wrapper {
+          flex-direction: column;
+        }
+
+        .carousel-btn {
+          font-size: 1.5rem;
+        }
+      }
+    </style>
+  </section>
+</section>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const slides = document.querySelectorAll(".carousel-slide");
+    const btnNext = document.getElementById("btn-next");
+    const btnPrev = document.getElementById("btn-prev");
+    let index = 0;
+
+    function showSlide(i) {
+      slides.forEach((slide, idx) => {
+        slide.classList.remove("active");
+        if (i === idx) slide.classList.add("active");
+      });
+    }
+
+    function nextSlide() {
+      index = (index + 1) % slides.length;
+      showSlide(index);
+    }
+
+    function prevSlide() {
+      index = (index - 1 + slides.length) % slides.length;
+      showSlide(index);
+    }
+
+    btnNext.addEventListener("click", nextSlide);
+    btnPrev.addEventListener("click", prevSlide);
+
+    showSlide(index); // Exibe o primeiro slide inicialmente
+
+    // Troca automática (opcional)
+    setInterval(nextSlide, 3000); // a cada 6 segundos
+  });
+</script>
+
+
+<section class="faq scroll-fade" id="faq">
+  <h2 class="title"><span>PERGUNTAS</span> FREQUENTES</h2>
+
+  <div class="faq-item">
+    <button class="faq-question">1. Quais serviços a agência oferece?</button>
+    <div class="faq-answer">
+      <p>Oferecemos serviços de gestão de Marketing Digital & Tradicional, contas internacionais, importação
+        estratégica, tráfego
+        pago, mídias sociais, serviços Gráficos e muito mais.</p>
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <button class="faq-question">2. Como posso contratar os serviços?</button>
+    <div class="faq-answer">
+      <p>Você pode entrar em contato pelo nosso formulário, telefone ou redes sociais. Após o primeiro contato, nossa
+        equipe irá te orientar no processo.</p>
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <button class="faq-question">3. Vocês fazem sites responsivos?</button>
+    <div class="faq-answer">
+      <p>Sim, desenvolvemos sites modernos, rápidos e responsivos, otimizados para celular, tablet e computador.</p>
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <button class="faq-question">4. Vocês ajudam com anúncios nas redes sociais?</button>
+    <div class="faq-answer">
+      <p>Sim! Cuidamos de toda a parte de tráfego pago, como anúncios no Facebook Ads, Instagram, Google Ads e TikTok.
+      </p>
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <button class="faq-question">5. Como posso pagar?</button>
+    <div class="faq-answer">
+      <p>Você pode pagar por Transferência Express, Referência Multicaixa, Transferência Bancária normal e também em
+        dinheiro (cash).</p>
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <button class="faq-question">6. Vocês oferecem suporte pós-venda?</button>
+    <div class="faq-answer">
+      <p>Sim, temos suporte ativo após a entrega dos serviços. Nosso objetivo é garantir que você tenha sucesso com o
+        que contratou.</p>
+    </div>
+  </div>
+</section>
+
+<script>
+  // Toggle respostas
+  const questions = document.querySelectorAll('.faq-question');
+  questions.forEach(q => {
+    q.addEventListener('click', () => {
+      const answer = q.nextElementSibling;
+      answer.style.display = answer.style.display === 'block' ? 'none' : 'block';
+    });
+  });
+
+  // Scroll fade animation com IntersectionObserver
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('ativo');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1 });
+
+  document.querySelectorAll('.scroll-fade').forEach(el => observer.observe(el));
+</script>
+
+<section id="contact" class="contato-section">
+  <div class="contato-container">
+    <h2 class="titulo-contato">📞 Entre em Contato Conosco</h2>
+    <p class="subtitulo-contato">Estamos prontos para transformar o seu negócio. Fale conosco agora mesmo!</p>
+
+    <div class="contato-content">
+      <!-- Imagem -->
+      <div class="container imagem-servicos fade-in">
+        <div class="efeito-pes"></div>
+        <img src="img/Header_2-removebg-preview.png" alt="Nossos Serviços" class="imagem-animada" width="300">
+        <div class="efeito-cadeira"></div>
+      </div>
+
+      <!-- Formulário -->
+      <div class="contato-formulario fade-in">
+        <iframe
+          src="https://docs.google.com/forms/d/e/1FAIpQLScdcQyEj6ak5X4-OZZNwLHqCUkuzLtapZPqa7xIHm1Iqk8MVw/viewform?embedded=true"
+          width="100%" height="200" frameborder="0" marginheight="0" marginwidth="0" loading="lazy">
+          A carregar…
+        </iframe>
+
+        <div class="contato-infos">
+          <p>📍 Sumbe, Angola</p>
+          <p>✉️ geral-vazlonge@outlook.com</p>
+          <p>📞 +244 941 000 402</p>
+          <a href="https://wa.me/244941000402" target="_blank" class="btn-whatsapp">
+            <i class="fab fa-whatsapp"></i> Falar via WhatsApp
+          </a>
+
+          <!-- Ícones Sociais -->
+          <div class="social-icons">
+            <a href="https://www.instagram.com/vazlongeoficial/" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.tiktok.com/@vazlongeoficial" target="_blank"><i class="fab fa-tiktok"></i></a>
+            <a href="https://www.youtube.com/@Vazlongeoficial" target="_blank"><i class="fab fa-youtube"></i></a>
+          </div>
+
+          <p class="footer-text">© 2025 Agência Váz Longe – Todos os direitos reservados.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Botão WhatsApp -->
+<a href="https://wa.me/244941000402" class="whatsapp-fixo" target="_blank" aria-label="WhatsApp">
+  <i class="fab fa-whatsapp"></i>
+</a>
+
+<!-- Chat popup -->
+<div id="whatsapp-chat" class="whatsapp-chat">
+  <div class="chat-header">
+    <span style="color: rgb(3, 7, 20); font-size: 2rem;">💬 Suporte Váz Longe</span>
+    <button onclick="toggleChat()">×</button>
+  </div>
+  <div class="chat-body">
+    <p>👋 Olá! Como podemos ajudar hoje?</p>
+    <textarea id="mensagem" placeholder="Escreva sua mensagem..."></textarea>
+    <button onclick="enviarWhatsApp()">Enviar</button>
+  </div>
+</div>
+
+<!-- Botão flutuante -->
+<button id="whatsapp-button" onclick="toggleChat()">
+  <img src="https://img.icons8.com/ios-filled/50/ffffff/whatsapp.png" alt="WhatsApp">
+</button>
+
+<style>
+  /* Botão flutuante */
+  #whatsapp-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #25d366;
+    border: none;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+    cursor: pointer;
+    z-index: 999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: pulse 2s infinite ease-in-out;
+  }
+
+  #whatsapp-button:hover {
+    animation: none;
+    transform: scale(1.1);
+  }
+
+  #whatsapp-button img {
+    width: 30px;
+    height: 30px;
+  }
+
+  /* Janela de chat */
+  .whatsapp-chat {
+    position: fixed;
+    bottom: 90px;
+    right: 20px;
+    width: 330px;
+    max-width: 90%;
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+    display: none;
+    flex-direction: column;
+    opacity: 0;
+    transform: translateY(20px);
+    z-index: 998;
+  }
+
+  .whatsapp-chat.open {
+    display: flex;
+    animation: fadeInUp 0.4s ease forwards;
+  }
+
+  .chat-header {
+    background-color: #25d366;
+    color: #fff;
+    padding: 12px 16px;
+    font-weight: bold;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+  }
+
+  .chat-header button {
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 20px;
+    cursor: pointer;
+  }
+
+  .chat-body {
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    animation: slideIn 0.4s ease;
+  }
+
+  .chat-body p {
+    margin: 0;
+    font-size: 1.5rem;
+    color: #120836;
+  }
+
+  .chat-body textarea {
+    resize: none;
+    height: 80px;
+    padding: 10px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    font-size: 0.95rem;
+    transition: border-color 0.3s;
+  }
+
+  .chat-body textarea:focus {
+    outline: none;
+    border-color: #25d366;
+  }
+
+  .chat-body button {
+    background-color: #25d366;
+    color: white;
+    border: none;
+    padding: 12px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background 0.3s ease, transform 0.2s ease;
+  }
+
+  .chat-body button:hover {
+    background-color: #1ebe5d;
+    transform: scale(1.02);
+  }
+
+  /* Animações */
+  @keyframes fadeInUp {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes slideIn {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes pulse {
+
+    0%,
+    100% {
+      transform: scale(1);
+    }
+
+    50% {
+      transform: scale(1.05);
+    }
+  }
+</style>
+
+<script>
+  function toggleChat() {
+    const chat = document.getElementById("whatsapp-chat");
+    chat.classList.toggle("open");
+  }
+
+  function enviarWhatsApp() {
+    const mensagem = document.getElementById("mensagem").value.trim();
+    if (!mensagem) {
+      alert("Por favor, escreva uma mensagem.");
+      return;
+    }
+    const numero = "244941000402";
+    const link = `https://wa.me/${numero}?text=${encodeURIComponent(mensagem)}`;
+    window.open(link, "_blank");
+  }
+</script>
